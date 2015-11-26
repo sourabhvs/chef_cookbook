@@ -1,0 +1,7 @@
+name 'ruby_rbenv'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures ruby_rbenv'
+long_description 'Installs/Configures ruby_rbenv'
+version '0.1.0'
