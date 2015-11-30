@@ -25,17 +25,19 @@ elsif case node[:platform] when 'centos'
     EOH
 only_if { 'node.["sshd"]["path"] = "false"' }
     end
-        template "/etc/ssh/sshd_config" do
-	 source "centos_config.erb"
-	  variables(
 
-		:response => "no",
-		:without => "without-password"
-	  )
+   template "/etc/ssh/sshd_config" do
+    source "centos_config.erb"
+     variables(
+      :response => "no",
+      :without => "without-password"
+     )
+   end
 
-	end
   end
-execute 'restart_service' do 
-command 'service sshd restart'
-end 
+
+  execute 'restart_service' do 
+    command 'service sshd restart'
+  end 
+
 end
